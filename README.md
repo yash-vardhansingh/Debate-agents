@@ -63,14 +63,3 @@ Files
 
 - `app.py` — Streamlit UI that drives the debate. Uses `team_config` and `debate` from `debate.py`.
 - `debate.py` — Agent setup, streaming helpers, and a small `main()` for testing.
-
-Next steps / suggestions
------------------------
-- Add a `requirements.txt` with exact dependency versions.
-- Move secrets to environment variables.
-- Add a short test or script to simulate a debate without calling a remote model (for local dev).
-
-License
--------
-Specify a license if you intend to share this repository publicly.
-
