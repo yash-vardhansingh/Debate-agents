@@ -1,0 +1,13 @@
+# Requirements for Debate-agent
+# Python 3.10+
+streamlit
+httpx
+autogen-core
+autogen-ext
+autogen-agentchat
+
+# Notes:
+# - The autogen package names above are placeholders for the organization's Autogen distribution
+#   — replace them with the actual package names used in your environment (or install from a
+#   private index if required).
+# - Consider pinning exact versions for reproducible installs (e.g. streamlit==1.XX.X).
