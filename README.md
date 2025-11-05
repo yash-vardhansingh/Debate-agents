@@ -8,7 +8,24 @@ This repo contains two main entry points:
 - `debate.py` — Agent configuration and a CLI-style runner. Defines a host (Jane) and two debaters (John - pro, Alice - con) using the Autogen agent/chat stack.
 
 Quick notes
----------------
+- This project expects Python 3.10+.
+- You must provide your own model endpoint and API key. Set these as environment variables:
+    - DEBATE_BASE_URL — the base URL of your LLM service
+    - DEBATE_API_KEY — your API key
+    Example (read at runtime):
+    ```python
+    import os
+    base_url = os.environ["DEBATE_BASE_URL"]
+    api_key = os.environ["DEBATE_API_KEY"]
+    ```
+- For local development you can load values from a .env file (do not commit .env) using python-dotenv:
+    ```python
+    from dotenv import load_dotenv
+    load_dotenv()
+    ```
+- Keep TLS verification enabled — do not use httpx.AsyncClient(verify=False). Store secrets in a secure vault or CI secrets rather than in source control.
+- Pin and confirm dependencies in a requirements.txt or your environment manager.
+- When developing or testing, prefer mocked or stubbed model clients to avoid accidental use of real keys.
 - This project expects Python 3.10+.
 - The code in `debate.py` uses custom Autogen-related packages (`autogen_ext`, `autogen_core`, `autogen_agentchat`) and an HTTP client (`httpx`).
 - `debate.py` currently contains an API key and a base_url for a private LLM endpoint. Replace these with environment variables before running.
