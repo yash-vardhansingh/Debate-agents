@@ -58,18 +58,6 @@ python debate.py
 streamlit run app.py
 ```
 
-Security & configuration
-------------------------
-- `debate.py` currently inflates a model client with a hard-coded `api_key` and `base_url`. Do not commit real keys to source control. Instead, set them from environment variables or a secure vault. For example:
-
-```python
-import os
-api_key = os.environ.get("DEBATE_API_KEY")
-base_url = os.environ.get("DEBATE_BASE_URL")
-```
-
-- The project also sets `httpx.AsyncClient(verify=False)` which disables HTTPS verification — avoid this in production.
-
 Files
 -----
 
